@@ -109,14 +109,13 @@ class Client:
         vibor = input()
         if vibor == "1":
             print("Введите новый пароль: ")
-            username = input()
+            pasword_new = input()
             newdata = {
-                "Username": username,
-                "Password": pasword,
+                "Username": login,
+                "Password": pasword_new,
                 "Dolznost_ID": 3
             }
-            sqlDB = SQL.SQLmy()
-            sqlDB.updateData('Clients', newdata, Client_ID)
+            SQL.SQLmy.updateData('Clients', newdata, Client_ID)
 
         elif vibor == "2":
             print("Введите новый логин: ")
@@ -126,9 +125,7 @@ class Client:
                 "Password": pasword,
                 "Dolznost_ID": 3
             }
-            sqlDB = SQL.SQLmy()
-            nametable = 'Clients'
-            sqlDB.updateData(nametable, newdata, Client_ID)
+            SQL.SQLmy.updateData('Clients', newdata, Client_ID)
 
 
     def allzakazs(Client_ID):
